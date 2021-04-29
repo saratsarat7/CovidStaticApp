@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Covid Helper</title>
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+    <p hidden id="browserFingerprint" type=></p>
+    <p hidden id="longitude" type=></p>
+    <p hidden id="latitude" type=></p>
+    <p hidden id="locationError" type=>N</p>
+    <div class="container_newPost">
+      <input type="text" placeholder="What is your name?">
+      <input type="tel" placeholder="Enter phone number">
+      <button onclick="getLocation()">Get Location</button>
+      <input type="text" placeholder="Area">
+      <input type="text" placeholder="Type">
+    </div>
+    <!-- This is needed to get the Finger Print ID for any Device -->
+    <script
+      async
+      src="////cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"
+      onload="initFingerprintJS()"
+    ></script>
+    <!-- Location Script -->
+    <script type="text/javascript" src="./js/location.js"></script>
+    <!-- Browser Fingerprint -->
+    <script type="text/javascript" src="./js/getId.js"></script>
+  </body>
+</html>
