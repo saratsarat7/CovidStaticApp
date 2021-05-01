@@ -74,7 +74,7 @@ body{
   background-color: #f0c929;
   border-radius: 1rem;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-  width: 10rem;
+  width: 8rem;
   height: 6rem;
   cursor: pointer;
   font-size: 16px;
@@ -112,4 +112,35 @@ body{
 
 input:focus::placeholder {
   color: transparent;
+}
+
+#slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 18px !important;
+  /* width: 100%; */
+  border-radius: 10em;
+  background-color: #f0c929;
+  outline: none;
+  margin-bottom: 14px;
+}
+
+#slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #dbc500;
+  cursor: pointer;
+  border: 3px solid #f4f4f4;
+}
+
+#slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #dbc500;
+  cursor: pointer;
+  border: 3px solid #f4f4f4;
 }
