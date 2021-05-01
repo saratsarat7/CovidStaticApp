@@ -15,11 +15,10 @@
       <button>XYZ</button>
       <button>XYZ</button>
       <input type="submit" value="New Post" onclick="location.href='newRequest.html';">
-      <b>Search within range (KM)</b>
-      <!-- <input type="range" value="50" min="50" max="150" oninput="this.nextElementSibling.value = this.value"> -->
-      <!-- <input type="range" name="rangeInput" min="50" max="100" onchange="updateTextInput(this.value);"> -->
-      <input type="range" id="slider" name="rangeInput" min="50" max="150" onchange="updateTextInput(this.value);">
-      <output>24</output>
+      <b>Searching within <span id="sliderValue">50</span> (KM)</b>
+      <input type="range" id="slider" name="rangeInput" value="50" min="50" max="150" onchange="updateTextInput(this.value);">
     </div>
   </body>
+  <!-- Location Script -->
+  <script type="text/javascript" src="./js/sliderValue.js"></script>
 </html>

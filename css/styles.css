@@ -61,10 +61,10 @@ body {
 #slider {
   -webkit-appearance: none;
   appearance: none;
-  height: 18px !important;
+  height: 8px !important;
   /* width: 100%; */
   border-radius: 10em;
-  background-color: #f0c929;
+  background-color: #00adb5;
   outline: none;
   margin-bottom: 14px;
 }
@@ -75,7 +75,7 @@ body {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #dbc500;
+  background: #33d167;
   cursor: pointer;
   border: 3px solid #f4f4f4;
 }
@@ -84,7 +84,7 @@ body {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background-color: #dbc500;
+  background-color: #33d167;
   cursor: pointer;
   border: 3px solid #f4f4f4;
 }
@@ -159,6 +159,7 @@ input:focus::placeholder {
     font-size: 30px;
     font-weight: bolder;
   }
+
   .container_requests button {
     margin: 1rem 0;
     width: 22rem;
@@ -184,6 +185,7 @@ input:focus::placeholder {
     font-size: 30px;
     font-weight: bold;
   }
+
   .container_newRequest button {
     margin: 2rem 15px;
     width: 190px;
@@ -197,6 +199,7 @@ input:focus::placeholder {
     font-weight: bold;
     color: white;
   }
+
   .container_newPost input,
   button {
     margin: 1rem 0;
