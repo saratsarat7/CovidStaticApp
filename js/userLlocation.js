@@ -3,12 +3,15 @@ var latitude = document.getElementById("latitude");
 var locationError = document.getElementById("locationError");
 
 // We need this here only as the call for API needs to be done only after the location is obtained
-var needType = document.getElementById("needType").innerHTML;
+var needType;
 
 // Hide below if user allowed access later
-var locationSelector = document.getElementById("locationSelector");
+var locationSelector;
 
 function getLocation() {
+    needType = document.getElementById("needType").innerHTML;
+    locationSelector = document.getElementById("locationSelector");
+    
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
     } else {

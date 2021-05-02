@@ -1,3 +1,5 @@
+var helperPosts;
+
 async function getHelpers() {
     var longitude = document.getElementById("longitude").innerHTML;
     var latitude = document.getElementById("latitude").innerHTML;
@@ -18,12 +20,14 @@ async function getHelpers() {
             let text_data = await response.text();
             var list_to_string = text_data.substring(1,text_data.length - 1);
             var jsonArray = (new Function("return [" + list_to_string + "];")());
-            jsonArray.forEach(populateHelperHTML);
             
+            // Remove everything before loading.
+            helperPosts = document.getElementById("allPosts");
+            helperPosts.innerHTML = "";
+            jsonArray.forEach(populateSeekerHTML);
+
             // Show new post only after list is populated.
             document.getElementById("newPost").style.display = "block";
-            // Remove place holder text.
-            document.getElementById("loadingHolder").remove();
         } else {
             console.log("HTTP-Error: " + response.status);
         }
@@ -31,7 +35,6 @@ async function getHelpers() {
 }
 
 function populateSeekerHTML (value) {
-    var helperPosts = document.getElementById("allPosts");
     var helperButton = document.createElement("BUTTON");
     
     var helper_name = value["helper_name"];

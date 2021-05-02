@@ -26,15 +26,16 @@ function routePage (pageValue) {
         selection.style.display = "none";
         userInput.style.display = "none";
         
-        // Get location to query API
-        getLocation();
-        
         // Set type of request, helper or seeker
         if (pageValue == "I need help") {
             needType.innerHTML = "seeker";
         } else {
             needType.innerHTML = "helper";
         }
+
+        // Get location to query API
+        getLocation();
+        return;
     }
 
     if (pageValue == "New Post") {
@@ -42,6 +43,7 @@ function routePage (pageValue) {
         listPage.style.display = "none";
         selection.style.display = "block";
         userInput.style.display = "none";
+        return;
     }
 
     var request_types = ['Oxygen', 'Hospital Beds', 'Vaccine', 'Covid Test', 'Other']
@@ -59,5 +61,6 @@ function routePage (pageValue) {
 
         // Set request type value
         reqType.value = pageValue;
+        return;
     }
 }
