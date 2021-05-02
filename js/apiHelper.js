@@ -39,7 +39,7 @@ function populateSeekerHTML (value) {
     var helper_phone_number = value["helper_phone_number"];
     var helper_area = value["helper_area"];
     
-    var post_data = helper_name.concat(" wants ");
+    var post_data = helper_name.concat(" can help with ");
     post_data = post_data.concat(help_type);
     post_data = post_data.concat(" near ");
     post_data = post_data.concat(helper_area);
