@@ -16,10 +16,40 @@ function newPost(typeValue) {
 }
 
 function callPost() {
-    var userName = document.getElementById("name");
-    var userPhone = document.getElementById("phone");
-    var userArea = document.getElementById("autocomplete");
-    var userRequest = document.getElementById("reqType");
-    var userLong = document.getElementById("longitude");
-    var userLat = document.getElementById("latitude");
+    var api_url = "https://covid-helper.azurewebsites.net/api/create_seeker";
+    
+    var userName = document.getElementById("name").value;
+    var userPhone = document.getElementById("phone").value;
+    var userArea = document.getElementById("autocomplete").value;
+    var userRequest = document.getElementById("reqType").value;
+    
+    var userLong = document.getElementById("longitude").innerHTML;
+    var userLat = document.getElementById("latitude").innerHTML;
+
+    var jsonData = {};
+    jsonData["help_type"] = userRequest;
+    jsonData["seeker_name"] = userName;
+    jsonData["seeker_phone_number"] = userPhone;
+    var locationData = {};
+    locationData["longitude"] = parseFloat(userLong);
+    locationData["lattitude"] = parseFloat(userLat);
+    jsonData["seeker_location"] = locationData;
+    jsonData["seeker_area"] = userArea;
+    jsonData["comments"] = [];
+    console.log(jsonData)
+
+    fetch(api_url, {
+        method: 'POST',
+        headers: {
+            'content-type': 'text/json; charset=utf-8'
+        },
+        body: JSON.stringify(jsonData)
+        })
+        .then(response => {
+            console.log(response)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+
 }

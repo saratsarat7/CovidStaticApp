@@ -1,9 +1,16 @@
 let autoComplete;
 function initAutoComplete() {
+    // Only available in new post page; try to see if its available or not.
+    try {
+        var locationSelector = document.getElementById("locationSelector");
+    } catch(err) {
+        var locationSelector = null;
+    }
+
     const input = document.getElementById("autocomplete");
     const options = {
-        componentRestrictions: {country: "IN"},
-        fields: ["place_id", "geometry", "name"],
+        componentRestrictions: {country: "in"},
+        fields: ["geometry", "name"],
         types: ["establishment"],
     };
     var autocomplete = new google.maps.places.Autocomplete(input, options);
@@ -14,19 +21,8 @@ function initAutoComplete() {
         var latitude = document.getElementById("latitude");
         latitude.innerHTML = place.geometry.location.lat();
         longitude.innerHTML = place.geometry.location.lng();
+        if (locationSelector !== null) {
+            locationSelector.style.display = "none";
+        }
     });
 }
-
-// google.maps.event.addDomListener(window, 'load', function () {
-//     var places = new google.maps.places.Autocomplete(document.getElementById('autocomplete'));
-//     google.maps.event.addListener(places, 'place_changed', function () {
-//         var place = places.getPlace();
-//         var address = place.formatted_address;
-//         var latitude = place.geometry.location.A;
-//         var longitude = place.geometry.location.F;
-//         var mesg = "Address: " + address;
-//         mesg += "\nLatitude: " + latitude;
-//         mesg += "\nLongitude: " + longitude;
-//         alert(mesg);
-//     });
-// });
