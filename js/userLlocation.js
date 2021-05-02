@@ -17,6 +17,7 @@ function showPosition(position) {
     longitude.innerHTML = position.coords.longitude;
     latitude.innerHTML = position.coords.latitude;
     locationError.innerHTML = "N";
+    getSeekers();
 }
 
 function showError(error) {

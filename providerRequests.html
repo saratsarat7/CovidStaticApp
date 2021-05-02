@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="./css/styles.css">
   </head>
   <body>
+    <p hidden id="browserFingerprint" type=></p>
+    <p hidden id="longitude" type=></p>
+    <p hidden id="latitude" type=></p>
+    <p hidden id="locationError" type=>N</p>
     <div class="container_requests">
       <button>XYZ</button>
       <button>XYZ</button>
@@ -19,6 +23,27 @@
       <input type="range" id="slider" name="rangeInput" value="50" min="50" max="150" onchange="updateTextInput(this.value);">
     </div>
   </body>
-  <!-- Location Script -->
+  <!-- Slider value Script -->
   <script type="text/javascript" src="./js/sliderValue.js"></script>
+  <!-- Browser Fingerprint -->
+  <script type="text/javascript" src="./js/getId.js"></script>
+  <!-- This is needed to get the Finger Print ID for any Device -->
+  <script
+    async
+    src="//cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"
+    onload="initFingerprintJS()"
+  ></script>
+  <!-- Location Script -->
+  <script
+    async
+    src="./js/userLlocation.js"
+    onload="getLocation()"
+  ></script>
+  <!-- Query API -->
+  <script type="text/javascript" src="./js/apiConnections.js"></script>
+  <!-- <script
+    async
+    src="./js/apiConnections.js"
+    onload="getSeekers()"
+  ></script> -->
 </html>
