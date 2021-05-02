@@ -1,4 +1,3 @@
-let autoComplete;
 function initAutoComplete() {
     // If user entered the location there is no need to fill in the details.
     var locationSelector = document.getElementById("locationSelector");

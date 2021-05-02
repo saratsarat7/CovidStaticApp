@@ -13,4 +13,3 @@ function initFingerprintJS() {
         fingerprint.innerHTML = visitorId;
     })
 }
-// async src="//cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js" onload="initFingerprintJS()"
