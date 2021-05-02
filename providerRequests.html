@@ -7,18 +7,14 @@
     <link rel="stylesheet" href="./css/styles.css">
   </head>
   <body>
-    <p hidden id="browserFingerprint" type=></p>
-    <p hidden id="longitude" type=></p>
-    <p hidden id="latitude" type=></p>
-    <p hidden id="locationError" type=>N</p>
+    <span hidden id="browserFingerprint" type=></span>
+    <span hidden id="longitude" type=></span>
+    <span hidden id="latitude" type=></span>
+    <span hidden id="locationError" type=>N</span>
+    <span hidden id="requestType">helping</span>
     <div class="container_requests">
-      <button>XYZ</button>
-      <button>XYZ</button>
-      <button>XYZ</button>
-      <button>XYZ</button>
-      <button>XYZ</button>
-      <button>XYZ</button>
-      <input type="submit" value="New Post" onclick="location.href='newRequest.html';">
+      <div id="seekerPosts" class="container_requests"></div>
+      <input type="submit" value="New Post" onclick="location.href='categorySelection.html';">
       <b>Searching within <span id="sliderValue">50</span> (KM)</b>
       <input type="range" id="slider" name="rangeInput" value="50" min="50" max="150" onchange="updateTextInput(this.value);">
     </div>
@@ -40,10 +36,6 @@
     onload="getLocation()"
   ></script>
   <!-- Query API -->
-  <script type="text/javascript" src="./js/apiConnections.js"></script>
-  <!-- <script
-    async
-    src="./js/apiConnections.js"
-    onload="getSeekers()"
-  ></script> -->
+  <script type="text/javascript" src="./js/apiSeeker.js"></script>
+  <script type="text/javascript" src="./js/apiHelper.js"></script>
 </html>

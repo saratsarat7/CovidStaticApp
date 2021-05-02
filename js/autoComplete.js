@@ -2,11 +2,19 @@ let autoComplete;
 function initAutoComplete() {
     const input = document.getElementById("autocomplete");
     const options = {
-        componentRestrictions: { country: "in" },
+        componentRestrictions: {country: "IN"},
         fields: ["place_id", "geometry", "name"],
         types: ["establishment"],
     };
-    autocomplete = new google.maps.places.Autocomplete(input, options);
+    var autocomplete = new google.maps.places.Autocomplete(input, options);
+    
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var place = autocomplete.getPlace();
+        var longitude = document.getElementById("longitude");
+        var latitude = document.getElementById("latitude");
+        latitude = place.geometry.location.lat();
+        longitude = place.geometry.location.lng();
+    });
 }
 
 // google.maps.event.addDomListener(window, 'load', function () {
