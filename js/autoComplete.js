@@ -12,8 +12,8 @@ function initAutoComplete() {
         var place = autocomplete.getPlace();
         var longitude = document.getElementById("longitude");
         var latitude = document.getElementById("latitude");
-        latitude = place.geometry.location.lat();
-        longitude = place.geometry.location.lng();
+        latitude.innerHTML = place.geometry.location.lat();
+        longitude.innerHTML = place.geometry.location.lng();
     });
 }
 

@@ -2,15 +2,19 @@ var longitude = document.getElementById("longitude");
 var latitude = document.getElementById("latitude");
 var locationError = document.getElementById("locationError");
 
+// Only available in new post page; try to see if its available or not.
+try {
+    var locationSelector = document.getElementById("locationSelector");
+} catch(err) {
+    var locationSelector = null;
+}
+
 // Only available in listing pages to we try to see if its available or not.
 try {
     var requestType = document.getElementById("requestType");
 } catch(err) {
     var requestType = null;
 }
-
-// Only for new post page.
-var locationSelector = document.getElementById("locationSelector");
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -27,6 +31,9 @@ function showPosition(position) {
     longitude.innerHTML = position.coords.longitude;
     latitude.innerHTML = position.coords.latitude;
     locationError.innerHTML = "N";
+    if (locationSelector !== null) {
+        locationSelector.style.display = "none";
+    }
     if (requestType !== null) {
         // This is to see where the user is landing, i.e. in "i need help" or "i can help"
         if (requestType.innerHTML == "needing") {

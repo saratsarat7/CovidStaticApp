@@ -8,7 +8,7 @@ function initFingerprintJS() {
     .then(result => {
         // This is the visitor identifier:
         const visitorId = result.visitorId
-        console.log(visitorId)
+        // console.log(visitorId)
         var fingerprint = document.getElementById("browserFingerprint");
         fingerprint.innerHTML = visitorId;
     })
