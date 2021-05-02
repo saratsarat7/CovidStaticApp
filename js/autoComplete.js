@@ -1,11 +1,8 @@
 let autoComplete;
 function initAutoComplete() {
-    // Only available in new post page; try to see if its available or not.
-    try {
-        var locationSelector = document.getElementById("locationSelector");
-    } catch(err) {
-        var locationSelector = null;
-    }
+    // If user entered the location there is no need to fill in the details.
+    var locationSelector = document.getElementById("locationSelector");
+    var locationError = document.getElementById("locationError");
 
     const input = document.getElementById("autocomplete");
     const options = {
@@ -21,8 +18,7 @@ function initAutoComplete() {
         var latitude = document.getElementById("latitude");
         latitude.innerHTML = place.geometry.location.lat();
         longitude.innerHTML = place.geometry.location.lng();
-        if (locationSelector !== null) {
-            locationSelector.style.display = "none";
-        }
+        locationSelector.style.display = "none";
+        locationError.innerHTML = "N";
     });
 }

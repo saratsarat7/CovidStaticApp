@@ -2,19 +2,11 @@ var longitude = document.getElementById("longitude");
 var latitude = document.getElementById("latitude");
 var locationError = document.getElementById("locationError");
 
-// Only available in new post page; try to see if its available or not.
-try {
-    var locationSelector = document.getElementById("locationSelector");
-} catch(err) {
-    var locationSelector = null;
-}
+// We need this here only as the call for API needs to be done only after the location is obtained
+var needType = document.getElementById("needType").innerHTML;
 
-// Only available in listing pages to we try to see if its available or not.
-try {
-    var requestType = document.getElementById("requestType");
-} catch(err) {
-    var requestType = null;
-}
+// Hide below if user allowed access later
+var locationSelector = document.getElementById("locationSelector");
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -31,16 +23,14 @@ function showPosition(position) {
     longitude.innerHTML = position.coords.longitude;
     latitude.innerHTML = position.coords.latitude;
     locationError.innerHTML = "N";
-    if (locationSelector !== null) {
-        locationSelector.style.display = "none";
-    }
-    if (requestType !== null) {
-        // This is to see where the user is landing, i.e. in "i need help" or "i can help"
-        if (requestType.innerHTML == "needing") {
-            getHelpers();
-        } else {
-            getSeekers();
-        }
+    
+    locationSelector.style.display = "none";
+    
+    // Call API based on Type
+    if(needType == "seeker"){
+        getHelpers();
+    } else {
+        getSeekers();   
     }
     
 }

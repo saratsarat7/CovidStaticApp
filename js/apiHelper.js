@@ -19,6 +19,11 @@ async function getHelpers() {
             var list_to_string = text_data.substring(1,text_data.length - 1);
             var jsonArray = (new Function("return [" + list_to_string + "];")());
             jsonArray.forEach(populateHelperHTML);
+            
+            // Show new post only after list is populated.
+            document.getElementById("newPost").style.display = "block";
+            // Remove place holder text.
+            document.getElementById("loadingHolder").remove();
         } else {
             console.log("HTTP-Error: " + response.status);
         }
@@ -26,8 +31,7 @@ async function getHelpers() {
 }
 
 function populateSeekerHTML (value) {
-    console.log(value)
-    var helperPosts = document.getElementById("helperPosts");
+    var helperPosts = document.getElementById("allPosts");
     var helperButton = document.createElement("BUTTON");
     
     var helper_name = value["helper_name"];

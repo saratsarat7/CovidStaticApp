@@ -8,10 +8,81 @@
   </head>
 
   <body>
-    <div class="container">
-      <button onclick="location.href='helpRequests.html';">I need help</button>
-      <button onclick="location.href='providerRequests.html';">I can help</button>
-      <button onclick="location.href='requests.html';">My Requests</button>
+    <span hidden id="browserFingerprint" type=></span>
+    <span hidden id="longitude" type=></span>
+    <span hidden id="latitude" type=></span>
+    <span hidden id="locationError" type=>Y</span>
+    <span hidden id="needType"></span>
+    
+    <div id="mainPage">
+      <div class="container">
+        <button value="I need help" onclick="routePage(this.value)">I need help</button>
+        <button value="I can help" onclick="routePage(this.value)">I can help</button>
+        <button value="My Requests" onclick="routePage(this.value)">My Requests</button>
+      </div>
+    </div>
+
+    <div hidden id="listPage">
+      <div class="container_requests">
+        <div id="allPosts" class="container_requests">
+          <span id="loadingHolder">Please wait while we load your data.</span>
+        </div>
+        <input hidden id="newPost" type="submit" value="New Post" onclick="routePage(this.value)">
+        <b>Searching within <span id="sliderValue">50</span> (KM)</b>
+        <input type="range" id="slider" name="rangeInput" value="50" min="50" max="150" onchange="updateTextInput(this.value);">
+      </div>
+    </div>
+
+    <div hidden id="selection">
+      <div class="container_newRequest">
+        <button className="flex-item" value="Oxygen" onclick="routePage(this.value)">Oxygen</button>
+        <button className="flex-item" value="Hospital Beds" onclick="routePage(this.value)">Hospital Beds</button>
+        <button className="flex-item" value="Vaccine" onclick="routePage(this.value)">Vaccine</button>
+        <button className="flex-item" value="Covid Test" onclick="routePage(this.value)">Covid Test</button>
+        <button className="flex-item" value="Other" onclick="routePage(this.value)">Other</button>
+      </div>
+    </div>
+
+    <div hidden id="userInput">
+      <div class="container_newPost">
+        <input id="name" type="text" placeholder="What is your name?">
+        <input id="phone" type="tel" placeholder="Enter phone number">
+        <button id="locationSelector" onclick="getLocation()">Get Location</button>
+        <input id="autocomplete" type="text" placeholder="Area">
+        <input id="reqType" type="text" placeholder="Request Type">
+        <button onclick="callPost()">Submit Details</button>
+      </div>
     </div>
   </body>
+
+  <!-- Page Route Helper -->
+  <script type="text/javascript" src="./js/pageHandler.js"></script>
+
+  <!-- Slider value Script -->
+  <script type="text/javascript" src="./js/sliderValue.js"></script>
+  
+  <!-- Browser Fingerprint -->
+  <script type="text/javascript" src="./js/getId.js"></script>
+  <!-- This is needed to get the Finger Print ID for any Device -->
+  <script
+    async
+    src="//cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"
+    onload="initFingerprintJS()"
+  ></script>
+  
+  <!-- Location Script -->
+  <script type="text/javascript" src="./js/userLlocation.js"></script>
+
+  <!-- Location Autocomplete -->
+  <script async
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBNQPiZgBtNuhTb7jCASmkMofIX4qasw8&libraries=places&callback=initAutoComplete">
+  </script>
+  <script type="text/javascript" src="./js/autoComplete.js"></script>
+
+  <!-- API SECTION -->
+  <!-- Query API -->
+  <script type="text/javascript" src="./js/apiSeeker.js"></script>
+  <script type="text/javascript" src="./js/apiHelper.js"></script>
+  <!-- Create API -->
+  <script type="text/javascript" src="./js/apiCreate.js"></script>
 </html>
