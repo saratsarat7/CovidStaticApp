@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <span hidden id="browserFingerprint" type=></span>
+  <span hidden id="browserFingerprint" type=>testing</span>
   <span hidden id="longitude" type=></span>
   <span hidden id="latitude" type=></span>
   <span hidden id="locationError" type=>Y</span>
@@ -25,13 +25,24 @@
     </div>
   </div>
 
+  <div hidden id="myRequests">
+    <div>
+      <button class="backButton" value="0" onclick="routePage(this.value)">&#8656;</button>
+    </div>
+    <div class="container_requests">
+      <div id="myPosts" class="container_requests">
+        <span id="loadingHolder">Please wait while we load your data.</span>
+      </div>
+    </div>
+  </div>
+
   <div hidden id="listPage">
     <div>
       <button class="backButton" value="0" onclick="routePage(this.value)">&#8656;</button>
     </div>
     <div class="container_requests">
       <div id="allPosts" class="container_requests">
-        <span id="loadingHolder">Please wait while we load your data.</span>
+        <span id="loadingHolder">Please wait while we load available data.</span>
       </div>
       <input hidden id="newPost" type="submit" value="New Post" onclick="routePage(this.value)">
       <b>Searching within <span id="sliderValue">50</span> (KM)</b>
@@ -89,6 +100,8 @@
 <script type="text/javascript" src="./js/apiHelper.js"></script>
 <!-- Create API -->
 <script type="text/javascript" src="./js/apiCreate.js"></script>
+<!-- My Requests -->
+<script type="text/javascript" src="./js/apiMyRequests.js"></script>
 
 <!-- Page Route Helper -->
 <script type="text/javascript" src="./js/pageHandler.js"></script>

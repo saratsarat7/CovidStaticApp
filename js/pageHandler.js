@@ -8,6 +8,8 @@ function routePage (pageValue) {
     var selection = document.getElementById("selection");
     // Post Creation
     var userInput = document.getElementById("userInput");
+    // My Requests
+    var myRequests = document.getElementById("myRequests");
 
     // Extra Elements
     var reqType = document.getElementById("reqType");
@@ -33,6 +35,21 @@ function routePage (pageValue) {
         if (pageValueHTML.innerHTML == "post") {
                 pageValue = "New Post";
             }
+    }
+
+    if (pageValue == "My Requests") {
+        mainPage.style.display = "none";
+        listPage.style.display = "none";
+        selection.style.display = "none";
+        userInput.style.display = "none";
+        myRequests.style.display = "block";
+
+        // Set where you are right now for back button operation.
+        pageValueHTML.innerHTML = "list";
+
+        // Get my requests for this device.
+        getMyRequest();
+        return;
     }
 
     if (pageValue == "I need help" || pageValue == "I can help") {
