@@ -41,7 +41,7 @@ function populateHelperHTML (value) {
     var help_type = value["help_type"];
     var seeker_phone_number = value["seeker_phone_number"];
     var seeker_area = value["seeker_area"];
-    
+
     var post_data = seeker_name.concat(" wants ");
     post_data = post_data.concat(help_type);
     post_data = post_data.concat(" near ");
@@ -49,6 +49,35 @@ function populateHelperHTML (value) {
     post_data = post_data.concat(" you can call them on ");
     post_data = post_data.concat(seeker_phone_number);
 
+    // Add post details concatenated based on what we got from API.
     seekerButton.innerHTML = post_data;
+
+    // Get when post was created.
+    var date_time = String(value["date_time"]).split(" ");
+    var date = date_time[0];
+    var time = date_time[1];
+    var hour = parseInt(time.substr(0,2));
+    if (hour > 12) {
+        post_time = String(hour-12);
+        post_time = post_time.concat(":")
+        post_time = post_time.concat(time.substr(3,2));
+        post_time = post_time.concat(" PM");
+    } else {
+        post_time = String(hour-12);
+        post_time = post_time.concat(":")
+        post_time = post_time.concat(time.substr(3,2));
+        post_time = post_time.concat(" AM");
+    }
+    var postTimeStamp = document.createElement("span");
+    var post_data = "Post created on : ";
+    post_data = post_data.concat(date);
+    post_data = post_data.concat(" at ");
+    post_data = post_data.concat(post_time);
+    postTimeStamp.innerHTML = post_data;
+    postTimeStamp.style.color = "black";
+
+    seekerButton.appendChild(document.createElement("br"));
+    seekerButton.appendChild(postTimeStamp);
+
     seekerPosts.appendChild(seekerButton);
 }
