@@ -147,6 +147,10 @@ input:focus::placeholder {
   color: transparent;
 }
 
+#SubmitButton{
+  background-color: #f0c929 !important;
+}
+
 @media only screen and (max-width: 680px) {
   .container button {
     margin: 1rem 0;
@@ -216,4 +220,9 @@ input:focus::placeholder {
     font-weight: bold;
     text-align: center;
   }
+  
+  #SubmitButton{
+  background-color: #f0c929 !important;
+}
+  
 }
