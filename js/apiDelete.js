@@ -1,4 +1,4 @@
-function deletePost (buttonDetails) {
+async function deletePost (buttonDetails) {
     var myClickedButton = buttonDetails.target;
     var buttonID = myClickedButton.firstElementChild.innerHTML;
     
