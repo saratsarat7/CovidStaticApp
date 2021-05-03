@@ -18,6 +18,11 @@ function callPost() {
     // What does the user need ?
     var needType = document.getElementById("needType").innerHTML;
 
+    if (userName == "" || userPhone == "" || userRequest == "") {
+        alert("Please fill in your details and then submit.");
+        return;
+    }
+
     // Location json data
     var locationData = {};
     locationData["longitude"] = parseFloat(userLong);
@@ -51,6 +56,8 @@ function callPost() {
         })
         .then(response => {
             console.log(response)
+            alert("Post created successfully, going back to home.");
+            window.location.href="index.html";
         })
         .catch(err => {
             console.log(err)
