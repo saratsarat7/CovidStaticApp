@@ -43,7 +43,10 @@ async function getMyRequest() {
 
 function populateMyNeeds (value) {
     var seekerButton = document.createElement("BUTTON");
-    
+    seekerButton.onclick = function(event) {
+        deletePost(event);
+    };
+
     var seeker_name = value["seeker_name"];
     var help_type = value["help_type"];
     var seeker_phone_number = value["seeker_phone_number"];
@@ -60,12 +63,16 @@ function populateMyNeeds (value) {
     var postID = document.createElement("span");
     postID.style.display = "none";
     postID.innerHTML = value["_id"];
+    
     seekerButton.appendChild(postID);
     seekerPosts.appendChild(seekerButton);
 }
 
 function populateMyHelps (value) {
     var helperButton = document.createElement("BUTTON");
+    helperButton.onclick = function(event) {
+        deletePost(event);
+    };
     
     var helper_name = value["helper_name"];
     var help_type = value["help_type"];
@@ -83,6 +90,7 @@ function populateMyHelps (value) {
     var postID = document.createElement("span");
     postID.style.display = "none";
     postID.innerHTML = value["_id"];
+    
     helperButton.appendChild(postID);
     helperPosts.appendChild(helperButton);
 }
