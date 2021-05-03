@@ -69,7 +69,8 @@
     </div>
     <div class="container_newPost">
       <input id="name" type="text" placeholder="What is your name?">
-      <input id="phone" type="tel" placeholder="Enter phone number">
+      <input id="phone" type="tel" placeholder="Enter phone number" maxlength="10"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
       <button id="locationSelector" onclick="getLocation()">Get Location</button>
       <input id="autocomplete" type="text" placeholder="Area">
       <input id="reqType" type="text" placeholder="Request Type">

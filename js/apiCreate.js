@@ -26,6 +26,11 @@ function callPost() {
         return;
     }
 
+    if (String(userPhone).length < 10) {
+        alert("Phone numebr should be 10 ditgits.");
+        return;
+    }
+
     // Location json data
     var locationData = {};
     locationData["longitude"] = parseFloat(userLong);
