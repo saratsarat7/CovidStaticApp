@@ -11,6 +11,9 @@ function callPost() {
     var userLat = document.getElementById("latitude").innerHTML;
     var locationError = document.getElementById("locationError").innerHTML;
 
+    // Device Details
+    var browserFingerprint = document.getElementById("browserFingerprint").innerHTML;
+    
     if (locationError == "Y") {
         alert("Location data not available please click 'Get Location Button' and grant location access (or) type in your area details acurately to create a post in your Location");
         return;
@@ -46,6 +49,8 @@ function callPost() {
         jsonData["helper_area"] = userArea;
         var api_url = "https://covid-helper.azurewebsites.net/api/create_giver";
     }
+
+    jsonData["device_id"] = browserFingerprint;
 
     fetch(api_url, {
         method: 'POST',
