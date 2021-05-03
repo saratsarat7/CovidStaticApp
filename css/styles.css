@@ -1,6 +1,7 @@
 body {
   background-color: #e1f1dd;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -27,13 +28,12 @@ body {
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
-  margin-top: 2rem;
   align-items: center;
   font-family: "Work Sans", sans-serif;
 }
 
 .container_requests button {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   width: 25rem;
   height: auto;
   padding: 0.5rem;
@@ -60,26 +60,13 @@ body {
 }
 
 .backButton{
-  width: 50px;
-  height: 50px;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   background: #00adb5;
-  text-align: center;
-  line-height: 30px;
-  display: inline-block;
   position: absolute;
-  position: absolute;
-  left: 440px;
-  top: 10px;
-}
-
-.backButton a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  color: #333;
-  font-size: 50px;
+  left: 30rem;
+  font-size: 2rem;
 }
 
 #slider {
@@ -90,7 +77,7 @@ body {
   border-radius: 10em;
   background-color: #00adb5;
   outline: none;
-  margin-bottom: 14px;
+  margin-bottom: 2rem;
 }
 
 #slider::-webkit-slider-thumb {
@@ -172,100 +159,4 @@ input:focus::placeholder {
 
 #SubmitButton{
   background-color: #f0c929 !important;
-}
-@media only screen and (max-width: 680px) {
-  .container button {
-    margin: 1rem 0;
-    width: 20rem;
-    height: 8rem;
-    border-radius: 1rem;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-    background-color: #00adb5;
-    color: white;
-    font-size: 30px;
-    font-weight: bolder;
-  }
-
-  .container_requests button {
-    margin: 1rem 0;
-    width: 22rem;
-    padding: 0.5rem;
-    height: auto;
-    border-radius: 1rem;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-    background-color: #00adb5;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-  }
-
-  .container_requests input {
-    margin: 1rem 0;
-    width: 22rem;
-    height: 5rem;
-    border-radius: 1rem;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-    background-color: #f0c929;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-  }
-
-  .container_newRequest button {
-    margin: 2rem 15px;
-    width: 190px;
-    background-color: #f0c929;
-    border-radius: 1rem;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-    width: 10rem;
-    height: 10rem;
-    cursor: pointer;
-    font-size: 30px;
-    font-weight: bold;
-    color: white;
-  }
-
-  .container_newPost input,
-  button {
-    margin: 1rem 0;
-    width: 22rem;
-    height: 5rem;
-    border-radius: 1rem;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-    background-color: #00adb5;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  #SubmitButton{
-    background-color: #f0c929 !important;
-  }
-
-  .backButton{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #00adb5;
-    text-align: center;
-    line-height: 30px;
-    display: inline-block;
-    position: absolute;
-    left: 155px;
-    top: 10px;
-  }
-
-  .backButton a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: #333;
-    font-size: 50px;
-  }
 }

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Covid Helper</title>
   <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/min.css">
 </head>
 
 <body>
@@ -25,8 +26,8 @@
   </div>
 
   <div hidden id="listPage">
-    <div class="backButton">
-      <a href="">&#x2190;</a>
+    <div>
+      <button class="backButton" value="0" onclick="routePage(this.value)">&#8656;</button>
     </div>
     <div class="container_requests">
       <div id="allPosts" class="container_requests">
@@ -39,8 +40,8 @@
   </div>
 
   <div hidden id="selection">
-    <div class="backButton">
-      <a href="">&#x2190;</a>
+    <div>
+      <button class="backButton" value="0" onclick="routePage(this.value)">&#8656;</button>
     </div>
     <div class="container_newRequest">
       <button className="flex-item" value="Oxygen" onclick="routePage(this.value)">Oxygen</button>
@@ -52,8 +53,8 @@
   </div>
 
   <div hidden id="userInput">
-    <div class="backButton">
-      <a href="">&#x2190;</a>
+    <div>
+      <button class="backButton" value="0" onclick="routePage(this.value)">&#8656;</button>
     </div>
     <div class="container_newPost">
       <input id="name" type="text" placeholder="What is your name?">

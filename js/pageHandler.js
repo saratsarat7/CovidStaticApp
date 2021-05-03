@@ -1,3 +1,4 @@
+var holdValue;
 function routePage (pageValue) {
     // Home Page
     var mainPage = document.getElementById("mainPage");
@@ -16,28 +17,23 @@ function routePage (pageValue) {
     
     var pageValueHTML = document.getElementById("pageValueHTML");
     if (pageValue == "0") {
+        holdValue = pageValue;
         if (pageValueHTML.innerHTML == "list") {
-                window.location = '/';
+                window.location.href="index.html";
                 return;
             }
         if (pageValueHTML.innerHTML == "category" &&
             needType.innerHTML == "seeker") {
-                pageValue == "I need help";
+                pageValue = "I need help";
             }
         if (pageValueHTML.innerHTML == "category" &&
             needType.innerHTML == "helper") {
-                pageValue == "I can help";
+                pageValue = "I can help";
             }
         if (pageValueHTML.innerHTML == "post") {
-                pageValue == "New Post";
+                pageValue = "New Post";
             }
     }
-
-    // Reset "new post" screen values when useris navigating again from home page.
-    document.getElementById("name").value = "";
-    document.getElementById("phone").value = "";
-    document.getElementById("autocomplete").value = "";
-    document.getElementById("reqType").value = "";
 
     if (pageValue == "I need help" || pageValue == "I can help") {
         mainPage.style.display = "none";
@@ -54,9 +50,10 @@ function routePage (pageValue) {
         } else {
             needType.innerHTML = "helper";
         }
-
-        // Get location to query API
-        getLocation();
+        if (holdValue !== "0") {
+            // Get location to query API
+            getLocation();
+        }
         return;
     }
 
@@ -75,6 +72,12 @@ function routePage (pageValue) {
     var request_types = ['Oxygen', 'Hospital Beds', 'Vaccine', 'Covid Test', 'Other']
     
     if (request_types.includes(pageValue)) {
+        // Reset "new post" screen values when useris navigating again from home page.
+        document.getElementById("name").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("autocomplete").value = "";
+        document.getElementById("reqType").value = "";
+
         mainPage.style.display = "none";
         listPage.style.display = "none";
         selection.style.display = "none";
