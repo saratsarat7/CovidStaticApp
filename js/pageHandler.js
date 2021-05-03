@@ -21,7 +21,7 @@ function routePage (pageValue) {
     if (pageValue == "0") {
         holdValue = pageValue;
         if (pageValueHTML.innerHTML == "list") {
-                window.location.href="index.html";
+                window.location.href="mainHome.html";
                 return;
             }
         if (pageValueHTML.innerHTML == "category" &&
