@@ -55,8 +55,12 @@ function populateMyNeeds (value) {
     post_data = post_data.concat(seeker_area);
     post_data = post_data.concat(" you can call them on ");
     post_data = post_data.concat(seeker_phone_number);
-
     seekerButton.innerHTML = post_data;
+
+    var postID = document.createElement("span");
+    postID.style.display = "none";
+    postID.innerHTML = value["_id"];
+    seekerButton.appendChild(postID);
     seekerPosts.appendChild(seekerButton);
 }
 
@@ -74,7 +78,11 @@ function populateMyHelps (value) {
     post_data = post_data.concat(helper_area);
     post_data = post_data.concat(" you can call them on ");
     post_data = post_data.concat(helper_phone_number);
-
     helperButton.innerHTML = post_data;
+
+    var postID = document.createElement("span");
+    postID.style.display = "none";
+    postID.innerHTML = value["_id"];
+    helperButton.appendChild(postID);
     helperPosts.appendChild(helperButton);
 }
