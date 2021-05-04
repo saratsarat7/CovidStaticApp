@@ -67,7 +67,7 @@ function callPost() {
         .then(response => {
             console.log(response)
             alert("Post created successfully, going back to home.");
-            window.location.href="index.html";
+            window.location.href="mainHome.html";
         })
         .catch(err => {
             console.log(err)
