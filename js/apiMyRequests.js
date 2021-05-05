@@ -70,6 +70,10 @@ function populateMyNeeds (value) {
 
 function populateMyHelps (value) {
     var helperButton = document.createElement("BUTTON");
+    var deleteButton = document.createElement("BUTTON");
+    deleteButton.innerHTML = 'Delete Post';
+    deleteButton.className = 'deleteButton';
+    
     helperButton.onclick = function(event) {
         deletePost(event);
     };
@@ -93,4 +97,5 @@ function populateMyHelps (value) {
     
     helperButton.appendChild(postID);
     helperPosts.appendChild(helperButton);
+    helperPosts.appendChild(deleteButton);
 }
