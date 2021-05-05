@@ -1,16 +1,60 @@
 var holdValue;
-function routePage (pageValue) {
-    // Home Page
-    var mainPage = document.getElementById("mainPage");
-    // Listing Page
-    var listPage = document.getElementById("listPage");
-    // Type Selection
-    var selection = document.getElementById("selection");
-    // Post Creation
-    var userInput = document.getElementById("userInput");
-    // My Requests
-    var myRequests = document.getElementById("myRequests");
 
+// Home Page
+var mainPage = document.getElementById("mainPage");
+// Listing Page
+var listPage = document.getElementById("listPage");
+// Type Selection
+var selection = document.getElementById("selection");
+// Post Creation
+var userInput = document.getElementById("userInput");
+// My Requests
+var myRequests = document.getElementById("myRequests");
+// Options page main DIV
+var options = document.getElementById("options");
+
+function addOption(value){
+    var oneOption = document.createElement("BUTTON");
+    oneOption.className = "flex-item";
+    oneOption.value = value;
+    oneOption.innerHTML = value;
+    oneOption.onclick = function() {
+        routePage(this.value);
+    };
+    options.appendChild(oneOption);
+}
+
+function postPreview (value, need) {
+    var post_data = "";
+    if (need == "helper") {
+        var name = value["helper_name"];
+        var type = value["help_type"];
+        var phone = value["helper_phone_number"];
+        var area = value["helper_area"];
+    
+        post_data = name.concat(" can help with ");
+        post_data = post_data.concat(type);
+        post_data = post_data.concat(" near ");
+        post_data = post_data.concat(area);
+        post_data = post_data.concat(" you can call them on ");
+        post_data = post_data.concat(phone);
+    } else {
+        var name = value["seeker_name"];
+        var type = value["help_type"];
+        var phone = value["seeker_phone_number"];
+        var area = value["seeker_phone_number"];
+    
+        post_data = name.concat(" wants ");
+        post_data = post_data.concat(type);
+        post_data = post_data.concat(" near ");
+        post_data = post_data.concat(area);
+        post_data = post_data.concat(" you can call them on ");
+        post_data = post_data.concat(phone);
+    }
+    return post_data;
+}
+
+function routePage (pageValue) {
     // Extra Elements
     var reqType = document.getElementById("reqType");
     var locationSelector = document.getElementById("locationSelector");
@@ -74,19 +118,24 @@ function routePage (pageValue) {
         return;
     }
 
+    var request_types = ['Oxygen', 'Hospital Beds', 'Vaccine', 'Covid Test', 'Other']
+
     if (pageValue == "New Post") {
         mainPage.style.display = "none";
         listPage.style.display = "none";
         selection.style.display = "block";
         userInput.style.display = "none";
 
+        // Remove previous options when page is reloading
+        options.innerHTML = ""
+
+        // Load categories from about list in the page.
+        request_types.forEach(addOption);
+
         // Set where you are right now for back button operation.
         pageValueHTML.innerHTML = "category";
-
         return;
     }
-
-    var request_types = ['Oxygen', 'Hospital Beds', 'Vaccine', 'Covid Test', 'Other']
     
     if (request_types.includes(pageValue)) {
         // Reset "new post" screen values when useris navigating again from home page.
@@ -109,7 +158,11 @@ function routePage (pageValue) {
         }
 
         // Set request type value
-        reqType.value = pageValue;
+        if (pageValue == "Other") {
+            reqType.value = "";
+        } else {
+            reqType.value = pageValue;
+        }
         return;
     }
 }

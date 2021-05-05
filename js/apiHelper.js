@@ -36,18 +36,7 @@ async function getHelpers() {
 
 function populateSeekerHTML (value) {
     var helperButton = document.createElement("BUTTON");
-    
-    var helper_name = value["helper_name"];
-    var help_type = value["help_type"];
-    var helper_phone_number = value["helper_phone_number"];
-    var helper_area = value["helper_area"];
-    
-    var post_data = helper_name.concat(" can help with ");
-    post_data = post_data.concat(help_type);
-    post_data = post_data.concat(" near ");
-    post_data = post_data.concat(helper_area);
-    post_data = post_data.concat(" you can call them on ");
-    post_data = post_data.concat(helper_phone_number);
+    var post_data = postPreview(value, "helper")
 
     // Add post details concatenated based on what we got from API.
     helperButton.innerHTML = post_data;

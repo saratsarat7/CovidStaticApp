@@ -27,7 +27,7 @@ function callPost() {
     }
 
     if (String(userPhone).length < 10) {
-        alert("Phone numebr should be 10 ditgits.");
+        alert("Phone numebr should be 10 digits.");
         return;
     }
 
@@ -40,19 +40,27 @@ function callPost() {
     var jsonData = {};
     jsonData["help_type"] = userRequest;
 
+    // Data after post was created.
+    var post_data;
+    
+    // API endpont URL
+    var api_url;
+
     if (needType == "seeker") {
         jsonData["seeker_name"] = userName;
         jsonData["seeker_phone_number"] = userPhone;
         jsonData["seeker_location"] = locationData;
         jsonData["seeker_area"] = userArea;
         jsonData["comments"] = [];
-        var api_url = "https://covid-helper.azurewebsites.net/api/create_seeker";
+        api_url = "https://covid-helper.azurewebsites.net/api/create_seeker";
+        post_data = postPreview(jsonData, "seeker")
     } else {
         jsonData["helper_name"] = userName;
         jsonData["helper_phone_number"] = userPhone;
         jsonData["helper_location"] = locationData;
         jsonData["helper_area"] = userArea;
-        var api_url = "https://covid-helper.azurewebsites.net/api/create_giver";
+        api_url = "https://covid-helper.azurewebsites.net/api/create_giver";
+        post_data = postPreview(jsonData, "helper")
     }
 
     jsonData["device_id"] = browserFingerprint;
@@ -65,8 +73,9 @@ function callPost() {
         body: JSON.stringify(jsonData)
         })
         .then(response => {
-            console.log(response)
-            alert("Post created successfully, going back to home.");
+            console.log(response);
+            var display = "Post created successfully \n\n".concat(post_data);
+            alert(display);
             window.location.href="mainHome.html";
         })
         .catch(err => {

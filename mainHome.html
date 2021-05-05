@@ -41,12 +41,12 @@
       <button class="backButton" value="0" onclick="routePage(this.value)">&#8656;</button>
     </div>
     <div class="container_requests">
-      <div id="allPosts" class="container_requests">
-        <span id="loadingHolder">Please wait while we load available data.</span>
-      </div>
       <input hidden id="newPost" type="submit" value="New Post" onclick="routePage(this.value)">
       <b>Searching within <span id="sliderValue">50</span> (KM)</b>
       <input type="range" id="slider" name="rangeInput" value="50" min="50" max="150" onchange="updateTextInput(this.value);">
+      <div id="allPosts" class="container_requests">
+        <span id="loadingHolder">Please wait while we load available data.</span>
+      </div>
     </div>
   </div>
 
@@ -54,13 +54,7 @@
     <div>
       <button class="backButton" value="0" onclick="routePage(this.value)">&#8656;</button>
     </div>
-    <div class="container_newRequest">
-      <button className="flex-item" value="Oxygen" onclick="routePage(this.value)">Oxygen</button>
-      <button className="flex-item" value="Hospital Beds" onclick="routePage(this.value)">Hospital Beds</button>
-      <button className="flex-item" value="Vaccine" onclick="routePage(this.value)">Vaccine</button>
-      <button className="flex-item" value="Covid Test" onclick="routePage(this.value)">Covid Test</button>
-      <button className="flex-item" value="Other" onclick="routePage(this.value)">Other</button>
-    </div>
+    <div id="options" class="container_newRequest"></div>
   </div>
 
   <div hidden id="userInput">
