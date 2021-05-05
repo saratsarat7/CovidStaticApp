@@ -52,7 +52,7 @@ function populateSeekerHTML (value) {
         post_time = post_time.concat(time.substr(3,2));
         post_time = post_time.concat(" PM");
     } else {
-        post_time = String(hour-12);
+        post_time = String(hour);
         post_time = post_time.concat(":")
         post_time = post_time.concat(time.substr(3,2));
         post_time = post_time.concat(" AM");
