@@ -89,7 +89,6 @@ body {
   -webkit-appearance: none;
   appearance: none;
   height: 8px !important;
-  /* width: 100%; */
   border-radius: 10em;
   background-color: #00adb5;
   outline: none;
