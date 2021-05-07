@@ -30,6 +30,22 @@ body {
   padding: 0.5rem;
   align-items: center;
   font-family: "Work Sans", sans-serif;
+  margin: 1rem;
+}
+
+.container_requests_row {
+  display: flex;
+  justify-content: center;
+  margin: 5rem 27rem;
+}
+
+.button1 {
+  flex: 2;
+}
+
+.button2 {
+  flex: 1;
+  background-color: #f05945;
 }
 
 .container_requests button {
@@ -59,7 +75,7 @@ body {
   font-weight: bold;
 }
 
-.backButton{
+.backButton {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
@@ -157,6 +173,6 @@ input:focus::placeholder {
   color: transparent;
 }
 
-#SubmitButton{
+#SubmitButton {
   background-color: #f0c929 !important;
 }
