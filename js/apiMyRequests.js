@@ -42,10 +42,24 @@ async function getMyRequest() {
 }
 
 function populateMyNeeds (value) {
-    var seekerButton = document.createElement("BUTTON");
-    seekerButton.onclick = function(event) {
+    var rowData = document.createElement("div");
+    rowData.className += "container_requests_row";
+    
+    var deleteButton = document.createElement("BUTTON");
+    deleteButton.className += "del_button";
+    deleteButton.innerHTML = "Delete";
+    deleteButton.onclick = function(event) {
         deletePost(event);
     };
+
+    var postID = document.createElement("span");
+    postID.style.display = "none";
+    postID.innerHTML = value["_id"];
+    
+    deleteButton.appendChild(postID);
+
+    var leftData = document.createElement("BUTTON");
+    leftData.className += "text_button";
 
     var seeker_name = value["seeker_name"];
     var help_type = value["help_type"];
@@ -58,22 +72,34 @@ function populateMyNeeds (value) {
     post_data = post_data.concat(seeker_area);
     post_data = post_data.concat(" you can call them on ");
     post_data = post_data.concat(seeker_phone_number);
-    seekerButton.innerHTML = post_data;
+    leftData.innerHTML = post_data;
+
+    rowData.appendChild(leftData);
+    rowData.appendChild(deleteButton);
+
+    seekerPosts.appendChild(rowData);
+}
+
+function populateMyHelps (value) {
+    var rowData = document.createElement("div");
+    rowData.className += "container_requests_row";
+    
+    var deleteButton = document.createElement("BUTTON");
+    deleteButton.className += "del_button";
+    deleteButton.innerHTML = "Delete";
+    deleteButton.onclick = function(event) {
+        deletePost(event);
+    };
 
     var postID = document.createElement("span");
     postID.style.display = "none";
     postID.innerHTML = value["_id"];
     
-    seekerButton.appendChild(postID);
-    seekerPosts.appendChild(seekerButton);
-}
+    deleteButton.appendChild(postID);
 
-function populateMyHelps (value) {
-    var helperButton = document.createElement("BUTTON");
-    helperButton.onclick = function(event) {
-        deletePost(event);
-    };
-    
+    var leftData = document.createElement("BUTTON");
+    leftData.className += "text_button";
+
     var helper_name = value["helper_name"];
     var help_type = value["help_type"];
     var helper_phone_number = value["helper_phone_number"];
@@ -85,12 +111,10 @@ function populateMyHelps (value) {
     post_data = post_data.concat(helper_area);
     post_data = post_data.concat(" you can call them on ");
     post_data = post_data.concat(helper_phone_number);
-    helperButton.innerHTML = post_data;
+    leftData.innerHTML = post_data;
 
-    var postID = document.createElement("span");
-    postID.style.display = "none";
-    postID.innerHTML = value["_id"];
-    
-    helperButton.appendChild(postID);
-    helperPosts.appendChild(helperButton);
+    rowData.appendChild(leftData);
+    rowData.appendChild(deleteButton);
+
+    seekerPosts.appendChild(rowData);
 }

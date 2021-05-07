@@ -11,6 +11,21 @@ body {
   font-family: "Work Sans", sans-serif;
 }
 
+.container_requests_row {
+  display: flex;
+  justify-content: center;
+  width: 25rem;
+}
+
+.text_button {
+  flex: 3;
+}
+
+.del_button {
+  flex: 1;
+  background-color: #f05945;
+}
+
 .container button {
   margin: 1rem 0;
   width: 16rem;
@@ -32,25 +47,6 @@ body {
   font-family: "Work Sans", sans-serif;
   margin: 1rem;
 }
-
-/* style for two buttons */
-
-.container_requests_row {
-  display: flex;
-  justify-content: center;
-  margin: 5rem 27rem;
-}
-
-.button1 {
-  flex: 2;
-}
-
-.button2 {
-  flex: 1;
-  background-color: #f05945;
-}
-
-/* end of style for two buttons */
 
 .container_requests button {
   margin: 0.5rem 0;

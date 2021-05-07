@@ -26,21 +26,17 @@
   </div>
 
   <div hidden id="myRequests">
-    <div>
-      <button class="backButton" value="0" onclick="routePage(this.value)">&#8656;</button>
-    </div>
-    <!-- Added two buttons HERE!!!!! -->
-    <div id="myNewPosts" class="container_requests_row">
-      <button class="button1">ABC</button>
-      <button class="button2">DEF</button>
-    </div>
-    <!-- end of two buttons HERE!!!!! -->
-    <div class="container_requests">
-      <div id="myPosts" class="container_requests">
-        <span id="loadingHolder">Please wait while we load your data.</span>
-        
+    <div style="flex: content;">
+      <div>
+        <button class="backButton" value="0" onclick="routePage(this.value)">&#8656;</button>
+      </div>
+      <div class="container_requests">
+        <div id="myPosts" class="container_requests">
+          <span id="loadingHolder">Please wait while we load your data.</span>
+        </div>
       </div>
     </div>
+    
   </div>
 
   <div hidden id="listPage">

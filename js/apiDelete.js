@@ -1,4 +1,6 @@
 async function deletePost (buttonDetails) {
+    // console.log(buttonDetails);
+    var parentRow = buttonDetails.target.parentNode;
     var myClickedButton = buttonDetails.target;
     var buttonID = myClickedButton.firstElementChild.innerHTML;
     
@@ -9,9 +11,8 @@ async function deletePost (buttonDetails) {
 
     if (response.ok) {
         alert("Post Deleted.")
-        
         // Remove current button which was clicked as its deleted now.
-        myClickedButton.remove();
+        parentRow.remove();
     } else {
         console.log("HTTP-Error: " + response.status);
     }
