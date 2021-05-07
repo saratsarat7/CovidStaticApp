@@ -12,11 +12,15 @@
     font-weight: bolder;
   }
 
+  /* style for two buttons */
+
   .container_requests_row {
     display: flex;
     justify-content: center;
     margin: 5rem 0;
   }
+
+  /* end of style for two buttons */
 
   .container_requests button {
     margin: 0.5rem 0;
