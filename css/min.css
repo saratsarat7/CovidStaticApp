@@ -75,12 +75,11 @@
 
   .container_newRequest button {
     margin: 2rem 15px;
-    width: 80%;
+    width: 40%;
     background-color: #f0c929;
     border-radius: 1rem;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-    width: 10rem;
-    height: 10rem;
+    height: 7rem;
     cursor: pointer;
     font-size: 1rem;
     font-weight: bold;
