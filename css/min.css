@@ -1,7 +1,7 @@
 @media only screen and (max-width: 680px) {
   .container button {
     margin: 0.5rem 0;
-    width: 20rem;
+    width: 80%;
     height: 8rem;
     border-radius: 1rem;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
@@ -24,7 +24,7 @@
   .container_requests_row {
     display: flex;
     justify-content: center;
-    width: 25rem;
+    width: 80%;
   }
   
   .text_button {
@@ -38,7 +38,7 @@
 
   .container_requests button {
     margin: 0.5rem 0;
-    width: 22rem;
+    width: 80%;
     padding: 0.5rem;
     height: auto;
     border-radius: 1rem;
@@ -52,7 +52,7 @@
 
   .container_requests input {
     margin: 0.5rem 0;
-    width: 22rem;
+    width: 80%;
     height: 5rem;
     border-radius: 1rem;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
@@ -67,7 +67,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 380px;
+    width: 80%;
     margin: 0;
     margin-left: auto;
     margin-right: auto;
@@ -75,7 +75,7 @@
 
   .container_newRequest button {
     margin: 2rem 15px;
-    width: 190px;
+    width: 80%;
     background-color: #f0c929;
     border-radius: 1rem;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
@@ -99,7 +99,7 @@
   .container_newPost input,
   button {
     margin: 0.5rem 0;
-    width: 22rem;
+    width: 80%;
     height: 5rem;
     border-radius: 1rem;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
@@ -123,5 +123,35 @@
     position: unset;
     left: 0rem;
     font-size: 2rem;
+  }
+
+  #slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px !important;
+    border-radius: 10em;
+    background-color: #00adb5;
+    outline: none;
+    margin-bottom: 2rem;
+  }
+  
+  #slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 80%;
+    height: 25px;
+    border-radius: 50%;
+    background: #33d167;
+    cursor: pointer;
+    border: 3px solid #f4f4f4;
+  }
+  
+  #slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #33d167;
+    cursor: pointer;
+    border: 3px solid #f4f4f4;
   }
 }
