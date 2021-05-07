@@ -40,8 +40,6 @@ body {
 }
 
 .container_requests {
-  display: flex;
-  flex-direction: column;
   padding: 0.5rem;
   align-items: center;
   font-family: "Work Sans", sans-serif;
@@ -60,6 +58,18 @@ body {
   color: white;
   font-size: 16px;
   font-weight: bold;
+  display:inline-block;
+}
+
+.deleteButton{
+  width: 8rem!important;
+  height: 5.6rem!important;
+  border-radius: 1rem!important;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25)!important;
+  color: white!important;
+  background-color: #ce1212!important;
+  position: absolute;
+  top: 7rem;
 }
 
 .container_requests input {
