@@ -1,133 +1,156 @@
 @media only screen and (max-width: 680px) {
-    .container button {
-        margin: 0.5rem 0;
-        width: 20rem;
-        height: 8rem;
-        border-radius: 1rem;
-        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-        cursor: pointer;
-        background-color: #00adb5;
-        color: white;
-        font-size: 1rem;
-        font-weight: bolder;
-    }
+  .container button {
+    margin: 0.5rem 0;
+    width: 80%;
+    height: 8rem;
+    border-radius: 1rem;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    background-color: #00adb5;
+    color: white;
+    font-size: 1rem;
+    font-weight: bolder;
+  }
+  
+  .container_requests {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Work Sans", sans-serif;
+    margin: 0%;
+    padding: 0%;
+  }
+  
+  .container_requests_row {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+  }
+  
+  .text_button {
+    flex: 3;
+  }
+  
+  .del_button {
+    flex: 1;
+    background-color: #f05945;
+  }
 
-    .container_requests {
-      padding: 0.5rem;
-      align-items: center;
-      font-family: "Work Sans", sans-serif;
-      display: inline-block;
-      margin: 3rem 3rem;
-    }
+  .container_requests button {
+    margin: 0.5rem 0;
+    width: 80%;
+    padding: 0.5rem;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    background-color: #00adb5;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+  }
 
-    .container_requests button {
-        margin: 0.5rem 0;
-        width: 22rem;
-        padding: 0.5rem;
-        height: auto;
-        border-radius: 1rem;
-        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-        cursor: pointer;
-        background-color: #00adb5;
-        color: white;
-        font-size: 1rem;
-        font-weight: bold;
-    }
+  .container_requests input {
+    margin: 0.5rem 0;
+    width: 80%;
+    height: 5rem;
+    border-radius: 1rem;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    background-color: #f0c929;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+  }
 
-    .container_requests input {
-        margin: 0.5rem 0;
-        width: 22rem;
-        height: 5rem;
-        border-radius: 1rem;
-        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-        cursor: pointer;
-        background-color: #f0c929;
-        color: white;
-        font-size: 1rem;
-        font-weight: bold;
-    }
+  .container_newRequest {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    /* margin: 0;
+    margin-left: auto;
+    margin-right: auto; */
+  }
 
-    .deleteButton{
-      width: 8rem!important;
-      height: 5.6rem!important;
-      border-radius: 1rem!important;
-      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25)!important;
-      color: white!important;
-      background-color: #ce1212!important;
-      position: absolute!important;
-      top: 12.5rem!important;
-    }
+  .container_newRequest button {
+    /* margin: 2rem 15px; */
+    width: 40%;
+    background-color: #f0c929;
+    border-radius: 1rem;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    height: 7rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+  }
 
-    .container_newRequest {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 380px;
-        margin: 0;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .container_newPost {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    margin: 0;
+    align-items: center;
+    font-family: "Work Sans", sans-serif;
+  }
 
-    .container_newRequest button {
-        margin: 2rem 15px;
-        width: 190px;
-        background-color: #f0c929;
-        border-radius: 1rem;
-        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-        width: 10rem;
-        height: 10rem;
-        cursor: pointer;
-        font-size: 1rem;
-        font-weight: bold;
-        color: white;
-    }
+  .container_newPost input,
+  button {
+    margin: 0.5rem 0;
+    width: 80%;
+    height: 5rem;
+    border-radius: 1rem;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    background-color: #00adb5;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+  }
 
-    .container_newPost {
-        display: flex;
-        flex-direction: column;
-        padding: 0.5rem;
-        margin: 0;
-        align-items: center;
-        font-family: "Work Sans", sans-serif;
-    }
+  #SubmitButton {
+    background-color: #f0c929 !important;
+  }
 
-    .container_newPost input,
-    button {
-        margin: 0.5rem 0;
-        width: 22rem;
-        height: 5rem;
-        border-radius: 1rem;
-        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-        cursor: pointer;
-        background-color: #00adb5;
-        color: white;
-        font-size: 1rem;
-        font-weight: bold;
-        text-align: center;
-    }
+  .backButton {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: #00adb5;
+    position: unset;
+    left: 0rem;
+    font-size: 2rem;
+  }
 
-    #SubmitButton{
-        background-color: #f0c929 !important;
-    }
-
-    .backButton{
-        width: 4rem;
-        height: 4rem;
-        border-radius: 50%;
-        background: #00adb5;
-        position: unset;
-        left: 0rem;
-        font-size: 2rem;
-    }
-
-    .deleteButton{
-      width: 8rem!important;
-      height: 5.6rem!important;
-      border-radius: 1rem!important;
-      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25)!important;
-      color: white!important;
-      background-color: #ce1212!important;
-      position: absolute;
-      top: 7rem;
-    }
+  #slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px !important;
+    border-radius: 10em;
+    background-color: #00adb5;
+    outline: none;
+    margin-bottom: 2rem;
+  }
+  
+  #slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #33d167;
+    cursor: pointer;
+    border: 3px solid #f4f4f4;
+  }
+  
+  #slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #33d167;
+    cursor: pointer;
+    border: 3px solid #f4f4f4;
+  }
 }

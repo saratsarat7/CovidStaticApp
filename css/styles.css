@@ -11,6 +11,21 @@ body {
   font-family: "Work Sans", sans-serif;
 }
 
+.container_requests_row {
+  display: flex;
+  justify-content: center;
+  width: 25rem;
+}
+
+.text_button {
+  flex: 3;
+}
+
+.del_button {
+  flex: 1;
+  background-color: #f05945;
+}
+
 .container button {
   margin: 1rem 0;
   width: 16rem;
@@ -27,9 +42,8 @@ body {
 .container_requests {
   padding: 0.5rem;
   align-items: center;
-  font-family: "Work Sans", sans-serif
-  display: inline-block;
-  margin: 3rem 5rem;
+  font-family: "Work Sans", sans-serif;
+  margin: 1rem;
 }
 
 .container_requests button {
@@ -71,7 +85,7 @@ body {
   font-weight: bold;
 }
 
-.backButton{
+.backButton {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
@@ -85,7 +99,6 @@ body {
   -webkit-appearance: none;
   appearance: none;
   height: 8px !important;
-  /* width: 100%; */
   border-radius: 10em;
   background-color: #00adb5;
   outline: none;
@@ -169,6 +182,6 @@ input:focus::placeholder {
   color: transparent;
 }
 
-#SubmitButton{
+#SubmitButton {
   background-color: #f0c929 !important;
 }

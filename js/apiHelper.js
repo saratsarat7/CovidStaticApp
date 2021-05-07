@@ -30,6 +30,12 @@ async function getHelpers() {
             document.getElementById("newPost").style.display = "block";
         } else {
             console.log("HTTP-Error: " + response.status);
+            // In case of error notify user and tell they can proceed with new post
+            helperPosts = document.getElementById("allPosts");
+            helperPosts.innerHTML = "";
+
+            // Show new post in case api query is not correct so they can create new.
+            document.getElementById("newPost").style.display = "block";
         }
     }
 }
