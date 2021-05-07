@@ -15,5 +15,6 @@ async function deletePost (buttonDetails) {
         parentRow.remove();
     } else {
         console.log("HTTP-Error: " + response.status);
+        alert("Post Not Deleted. Try Again !!")
     }
 }
