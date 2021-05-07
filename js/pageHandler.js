@@ -44,7 +44,7 @@ function postPreview (value, need) {
         var name = value["seeker_name"];
         var type = value["help_type"];
         var phone = value["seeker_phone_number"];
-        var area = value["seeker_phone_number"];
+        var area = value["seeker_area"];
     
         post_data = name.concat(" wants ");
         post_data = post_data.concat(type);

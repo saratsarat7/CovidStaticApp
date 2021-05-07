@@ -67,14 +67,14 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 80%;
-    margin: 0;
+    width: 100%;
+    /* margin: 0;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; */
   }
 
   .container_newRequest button {
-    margin: 2rem 15px;
+    /* margin: 2rem 15px; */
     width: 40%;
     background-color: #f0c929;
     border-radius: 1rem;
