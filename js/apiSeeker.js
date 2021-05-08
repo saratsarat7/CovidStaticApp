@@ -24,10 +24,16 @@ async function getSeekers() {
             // Remove everything before loading.
             seekerPosts = document.getElementById("allPosts");
             seekerPosts.innerHTML = "";
+
+            // User message
+            var userText = document.createElement("span");
+            userText.innerHTML = "Below people need help you in your selected location range.";
+            seekerPosts.appendChild(userText);
+
             if (jsonArray.length > 0) {
                 jsonArray.forEach(populateHelperHTML);
             } else {
-                noResults(helperPosts);
+                noResults(seekerPosts);
             }
             
             // Show new post only after list is populated.

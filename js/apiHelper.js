@@ -24,6 +24,12 @@ async function getHelpers() {
             // Remove everything before loading.
             helperPosts = document.getElementById("allPosts");
             helperPosts.innerHTML = "";
+
+            // User message
+            var userText = document.createElement("span");
+            userText.innerHTML = "Below people can help you in your selected location range.";
+            helperPosts.appendChild(userText);
+
             if (jsonArray.length > 0) {
                 jsonArray.forEach(populateSeekerHTML);
             } else {

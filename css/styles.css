@@ -42,10 +42,10 @@ body {
 .container_requests {
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
   align-items: center;
   font-family: "Work Sans", sans-serif;
-  margin: 1rem;
+  /* margin: 1rem; */
 }
 
 .container_requests button {
