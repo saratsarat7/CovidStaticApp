@@ -58,28 +58,7 @@ function populateHelperHTML (value) {
     seekerButton.innerHTML = post_data;
 
     // Get when post was created.
-    var date_time = String(value["date_time"]).split(" ");
-    var date = date_time[0];
-    var time = date_time[1];
-    var hour = parseInt(time.substr(0,2));
-    if (hour > 12) {
-        post_time = String(hour-12);
-        post_time = post_time.concat(":")
-        post_time = post_time.concat(time.substr(3,2));
-        post_time = post_time.concat(" PM");
-    } else {
-        post_time = String(hour);
-        post_time = post_time.concat(":")
-        post_time = post_time.concat(time.substr(3,2));
-        post_time = post_time.concat(" AM");
-    }
-    var postTimeStamp = document.createElement("span");
-    var post_data = "Post created on : ";
-    post_data = post_data.concat(date);
-    post_data = post_data.concat(" at ");
-    post_data = post_data.concat(post_time);
-    postTimeStamp.innerHTML = post_data;
-    postTimeStamp.style.color = "black";
+    var postTimeStamp = addTime(value);
 
     seekerButton.appendChild(document.createElement("br"));
     seekerButton.appendChild(postTimeStamp);
