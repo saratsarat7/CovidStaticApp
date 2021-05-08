@@ -28,6 +28,8 @@ async function getHelpers() {
             // User message
             var userText = document.createElement("span");
             userText.innerHTML = "Below people can help you in your selected location range.";
+            userText.style.paddingBottom = "0.5rem";
+            userText.style.width = "80%";
             helperPosts.appendChild(userText);
 
             if (jsonArray.length > 0) {

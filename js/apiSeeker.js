@@ -27,7 +27,9 @@ async function getSeekers() {
 
             // User message
             var userText = document.createElement("span");
-            userText.innerHTML = "Below people need help you in your selected location range.";
+            userText.innerHTML = "Below people need help in your selected location range.";
+            userText.style.paddingBottom = "0.5rem";
+            userText.style.width = "80%";
             seekerPosts.appendChild(userText);
 
             if (jsonArray.length > 0) {

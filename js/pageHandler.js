@@ -88,7 +88,7 @@ function routePage (pageValue) {
         return;
     }
 
-    var request_types = ['Oxygen', 'Hospital Beds', 'Vaccine', 'Covid Test', 'Other']
+    var request_types = ['Oxygen', 'Hospital Beds', 'Covid Test', 'Food', 'Plasma', 'Medicines', 'Other'];
 
     if (pageValue == "New Post") {
         mainPage.style.display = "none";

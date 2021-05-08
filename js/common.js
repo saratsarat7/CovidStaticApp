@@ -61,6 +61,6 @@ function addTime(value) {
     post_data = post_data.concat(post_time);
     postTimeStamp.innerHTML = post_data;
     postTimeStamp.style.color = "black";
-    postTimeStamp.style.fontSize = "0.6rem";
+    postTimeStamp.style.fontSize = "0.7rem";
     return postTimeStamp;
 }
