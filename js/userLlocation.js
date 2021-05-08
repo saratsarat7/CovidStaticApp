@@ -43,7 +43,8 @@ function showError(error) {
     switch(error.code) {
         case error.PERMISSION_DENIED:
             console.log("User denied the request for Geolocation.")
-            alert("Location access denied please provide location access to proceed further !!");
+            alert("Location access denied !!" +
+                    "\nPlease provide location access to proceed further.");
             break;
         case error.POSITION_UNAVAILABLE:
             console.log("Location information is unavailable.")
@@ -61,9 +62,11 @@ function showError(error) {
 }
 
 function genericLocationError() {
-    alert("Location not available, please try again or use another mobile or device.");
     locationError.innerHTML = "Y";
     longitude.innerHTML = "";
     latitude.innerHTML = "";
-    window.location.href="mainHome.html";
+    if (confirm("Location not available, please try again or use another mobile or device. "
+            + "\nIf you are using an Apple Device please click OK to know how to enable location and then come back.") == true) {
+        window.location.href="https://www.youtube.com/watch?v=lRvKqkF-A_U";
+    }
 }
