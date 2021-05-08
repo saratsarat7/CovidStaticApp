@@ -153,4 +153,8 @@
     cursor: pointer;
     border: 3px solid #f4f4f4;
   }
+
+  ::placeholder {
+    opacity: 0.4; /* Firefox/Chrome */
+  }
 }
