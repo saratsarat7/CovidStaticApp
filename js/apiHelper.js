@@ -24,7 +24,11 @@ async function getHelpers() {
             // Remove everything before loading.
             helperPosts = document.getElementById("allPosts");
             helperPosts.innerHTML = "";
-            jsonArray.forEach(populateSeekerHTML);
+            if (jsonArray.length > 0) {
+                jsonArray.forEach(populateSeekerHTML);
+            } else {
+                noResults(helperPosts);
+            }
 
             // Show new post only after list is populated.
             document.getElementById("newPost").style.display = "block";

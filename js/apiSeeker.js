@@ -24,7 +24,11 @@ async function getSeekers() {
             // Remove everything before loading.
             seekerPosts = document.getElementById("allPosts");
             seekerPosts.innerHTML = "";
-            jsonArray.forEach(populateHelperHTML);
+            if (jsonArray.length > 0) {
+                jsonArray.forEach(populateHelperHTML);
+            } else {
+                noResults(helperPosts);
+            }
             
             // Show new post only after list is populated.
             document.getElementById("newPost").style.display = "block";
