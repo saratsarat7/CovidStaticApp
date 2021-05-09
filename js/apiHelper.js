@@ -63,7 +63,7 @@ function populateSeekerHTML (value) {
     var phone = document.createElement("a");
     phone.href = "tel:".concat(post_data[1]);
     phone.innerHTML = post_data[1];
-    helperButton.concat(phone);
+    helperButton.appendChild(phone);
     
     // Get when post was created.
     var postTimeStamp = addTime(value);

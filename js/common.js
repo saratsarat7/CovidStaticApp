@@ -14,7 +14,7 @@ function postPreview (value, need) {
             post_data = post_data.concat(area);
         }
         post_data = post_data.concat(" you can call them on ");
-        post_data = post_data.concat(phone);
+        // post_data = post_data.concat(phone);
     } else {
         phone = value["seeker_phone_number"];
         var name = value["seeker_name"];
@@ -28,9 +28,9 @@ function postPreview (value, need) {
             post_data = post_data.concat(area);
         }
         post_data = post_data.concat(" you can call them on ");
-        post_data = post_data.concat(phone);
+        // post_data = post_data.concat(phone);
     }
-    return post_data, phone;
+    return [post_data, phone];
 }
 
 function noResults(htmlNode) {
