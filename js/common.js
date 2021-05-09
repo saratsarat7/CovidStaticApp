@@ -1,9 +1,10 @@
 function postPreview (value, need) {
     var post_data = "";
+    var phone;
     if (need == "helper") {
+        phone = value["helper_phone_number"];
         var name = value["helper_name"];
         var type = value["help_type"];
-        var phone = value["helper_phone_number"];
         var area = value["helper_area"];
     
         post_data = name.concat(" can help with ");
@@ -15,9 +16,9 @@ function postPreview (value, need) {
         post_data = post_data.concat(" you can call them on ");
         post_data = post_data.concat(phone);
     } else {
+        phone = value["seeker_phone_number"];
         var name = value["seeker_name"];
         var type = value["help_type"];
-        var phone = value["seeker_phone_number"];
         var area = value["seeker_area"];
     
         post_data = name.concat(" wants ");
@@ -29,7 +30,7 @@ function postPreview (value, need) {
         post_data = post_data.concat(" you can call them on ");
         post_data = post_data.concat(phone);
     }
-    return post_data;
+    return post_data, phone;
 }
 
 function noResults(htmlNode) {

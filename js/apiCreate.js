@@ -73,7 +73,7 @@ function callPost() {
         body: JSON.stringify(jsonData)
         })
         .then(response => {
-            var display = "Post created successfully \n\n".concat(post_data);
+            var display = "Post created successfully \n\n".concat(post_data[0]);
             alert(display);
             window.location.href="mainHome.html";
         })
