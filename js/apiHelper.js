@@ -57,13 +57,7 @@ function populateSeekerHTML (value) {
     var post_data = postPreview(value, "helper")
 
     // Add post details concatenated based on what we got from API.
-    helperButton.innerHTML = post_data[0];
-
-    // Create phone hyper link to call quicckly
-    var phone = document.createElement("a");
-    phone.href = "tel:".concat(post_data[1]);
-    phone.innerHTML = post_data[1];
-    helperButton.concat(phone);
+    helperButton.innerHTML = post_data;
     
     // Get when post was created.
     var postTimeStamp = addTime(value);
